@@ -60,3 +60,39 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+
+//Ahora vamos a configurar los tipos de datos que se nos ha pedido, para que
+//el usuario pueda ingresar.
+int ingresarDatos(struct alumno *estudiante)
+{
+    char buffer[100];
+
+    printf("Matrícula: ");
+    fflush(stdout);
+    scanf("%d", &(estudiante->matricula));
+
+    printf("Nombre: ");
+    fflush(stdout);
+    getchar();
+    fgets(buffer, sizeof(buffer), stdin);
+    buffer[strcspn(buffer, "\n")] = '\0';
+    strncpy(estudiante->nombre, buffer, sizeof(estudiante->nombre));
+
+    printf("Dirección: ");
+    fflush(stdout);
+    fgets(buffer, sizeof(buffer), stdin);
+    buffer[strcspn(buffer, "\n")] = '\0';
+    strncpy(estudiante->direccion, buffer, sizeof(estudiante->direccion));
+
+    printf("Carrera: ");
+    fflush(stdout);
+    fgets(buffer, sizeof(buffer), stdin);
+    buffer[strcspn(buffer, "\n")] = '\0';
+    strncpy(estudiante->carrera, buffer, sizeof(estudiante->carrera));
+
+    printf("Promedio: ");
+    fflush(stdout);
+    scanf("%f", &(estudiante->promedio));
+
+    return 0;
+}
