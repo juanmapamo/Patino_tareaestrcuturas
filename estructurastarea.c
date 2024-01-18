@@ -9,3 +9,7 @@ struct alumno
     char carrera[50];
     float promedio;
 };
+//En este apartado vamos a definir alumno y estudiantes.
+int ingresarDatos(struct alumno *estudiante);
+int mostrarDatos(struct alumno *estudiante);
+
