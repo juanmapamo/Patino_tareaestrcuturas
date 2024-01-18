@@ -96,3 +96,16 @@ int ingresarDatos(struct alumno *estudiante)
 
     return 0;
 }
+
+//Finalmente vamos a imprimir lo que el usuario ha pedido.
+int mostrarDatos(struct alumno *estudiante)
+{
+    printf("\nMatrícula: %d\n", estudiante->matricula);
+    printf("Nombre: %s\n", estudiante->nombre);
+    printf("Dirección: %s\n", estudiante->direccion);
+    printf("Carrera: %s\n", estudiante->carrera);
+    printf("Promedio: %.2f\n", estudiante->promedio);
+    printf("\n");
+
+    return 0;
+}
